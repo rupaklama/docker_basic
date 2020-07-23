@@ -1,0 +1,22 @@
+# version of docker compose file
+version: '3'
+
+# here's the list of what we want to do
+# service is like type of container
+services:
+    # create redis container
+    redis-server:
+        # use the redis image from Dockerhub to create this container
+        image: 'redis'
+    
+    # create node container
+    node-app:
+        # container restart policies
+        # if this container stops for any reasons, always attempt to restart it
+        restart: always
+        # build using Dockerfile inside our source dir
+        build: ./
+
+        # port matching from local machine to container
+        ports:
+            - "4000:4001"
