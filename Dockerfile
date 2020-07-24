@@ -17,4 +17,4 @@ RUN npm install
 COPY ./ ./
 
 # CMD is command to tell image to run a container - our app
-CMD ["npm", "start"]
+CMD ["npm", "run", "start"]
